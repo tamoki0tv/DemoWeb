@@ -1,27 +1,37 @@
-const searchElement = document.getElementById('fix');
-const discountsElement = document.getElementById('container2');
 
-window.addEventListener('scroll', function() {
-  const scrollY = window.scrollY;
-  
-  if (scrollY >= 400 && scrollY <1100) {
-    searchElement.classList.remove('ctn-absolute');
-    searchElement.classList.add('ctn-fixed');
-  } else if (scrollY >= 1100) {
-    searchElement.classList.remove('ctn-fixed');
-    searchElement.classList.add('ctn-absolute');
-  } else {
-    searchElement.classList.remove('ctn-absolute');
-    searchElement.classList.remove('ctn-fixed');
-  }
-  
-  
-});
+  function validateForm() {
+    var fullName = document.getElementById("fullName").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    if (fullName === "") {
+        document.getElementById("fullNameError").style.display = "block";
+    } else {
+        document.getElementById("fullNameError").style.display = "none";
+    }
+    
+    if (username === "") {
+        document.getElementById("usernameError").style.display = "block";
+    } else {
+        document.getElementById("usernameError").style.display = "none";
+    }
+    
+    if (password === "") {
+        document.getElementById("passwordError").style.display = "block";
+    } else {
+        document.getElementById("passwordError").style.display = "none";
+    }
+}
 
-// Lấy thông tin user từ tệp JSON hoặc cơ sở dữ liệu
-const userJSON = localStorage.getItem('user');
-const user = JSON.parse(userJSON);
+// Ví dụ lưu thông tin đăng kí vào tệp JSON
+const user = {
+  fullName: document.getElementById('fullName').value,
+  username: document.getElementById('username').value,
+  // ...Thêm các thông tin khác cần lưu
+};
 
-// Hiển thị tên người dùng trong phần header
-const headerUser = document.getElementById('headerUser');
-headerUser.textContent = user.fullName;
+// Chuyển đổi đối tượng user thành chuỗi JSON
+const userJSON = JSON.stringify(user);
+
+// Lưu userJSON vào tệp JSON bằng cách sử dụng API của trình duyệt (localStorage, IndexedDB, ...)
+localStorage.setItem('user', userJSON);
