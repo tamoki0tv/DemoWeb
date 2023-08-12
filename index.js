@@ -2,7 +2,7 @@
   function validateForm() {
     var fullName = document.getElementById("fullName").value;
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var phone = document.getElementById("phone").value;
     
     if (fullName === "") {
         document.getElementById("fullNameError").style.display = "block";
@@ -16,22 +16,37 @@
         document.getElementById("usernameError").style.display = "none";
     }
     
-    if (password === "") {
-        document.getElementById("passwordError").style.display = "block";
+    if (phone === "") {
+        document.getElementById("phoneError").style.display = "block";
     } else {
-        document.getElementById("passwordError").style.display = "none";
+        document.getElementById("phoneError").style.display = "none";
     }
 }
 
-// Ví dụ lưu thông tin đăng kí vào tệp JSON
-const user = {
-  fullName: document.getElementById('fullName').value,
-  username: document.getElementById('username').value,
-  // ...Thêm các thông tin khác cần lưu
-};
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Lấy tham chiếu đến các phần tử trong tài liệu HTML bằng cách sử dụng các lớp và ID
+  const createAccountLink = document.querySelector('.create-account-link');
+  
+  const fullNameInput = document.getElementById('fullName');
+  const usernameInput = document.getElementById('username');
+  const phoneInput = document.getElementById('phone');
 
-// Chuyển đổi đối tượng user thành chuỗi JSON
-const userJSON = JSON.stringify(user);
-
-// Lưu userJSON vào tệp JSON bằng cách sử dụng API của trình duyệt (localStorage, IndexedDB, ...)
-localStorage.setItem('user', userJSON);
+  // Thêm sự kiện click cho nút "Create an account"
+  createAccountLink.addEventListener('click', function(event) {
+    // Kiểm tra xem người dùng đã điền đầy đủ thông tin hay chưa
+    if (fullNameInput.value !== '' && usernameInput.value !== '' && phoneInput.value !== '') {
+      // Nếu đã điền đầy đủ, lưu thông tin người dùng vào localStorage
+      const user = {
+        fullName: fullNameInput.value,
+        username: usernameInput.value,
+        phone: phoneInput.value
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      // Nếu chưa điền đầy đủ, ngăn chặn chuyển tới trang khác và hiển thị thông báo
+      event.preventDefault();
+      alert('Vui Lòng Nhập Đầy Đủ Thông Tin');
+    }
+  });
+});

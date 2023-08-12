@@ -22,6 +22,15 @@ window.addEventListener('scroll', function() {
 const userJSON = localStorage.getItem('user');
 const user = JSON.parse(userJSON);
 
-// Hiển thị tên người dùng trong phần header
-const headerUser = document.getElementById('headerUser');
-headerUser.textContent = user.fullName;
+if (user) {
+  const userFullName = user.fullName;
+  const userUsername = user.username;
+  const userPhone = user.phone;
+
+  const userInfoDiv = document.getElementById('userInfo');
+  userInfoDiv.innerHTML = `
+    <p><strong>Full Name:</strong> ${userFullName}</p>
+    <p><strong>Username:</strong> ${userUsername}</p>
+    <p><strong>Phone:</strong> ${userPhone}</p>
+  `;
+}
