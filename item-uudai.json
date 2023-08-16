@@ -1,0 +1,110 @@
+[
+    {
+        "img":"images/maycha.jpeg",
+        "name":"Trà Sữa Maycha",
+        "price":"35.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/taka_cha.jpeg",
+        "name":"Trà Sữa Taka Cha",
+        "price":"28.000",
+        "type":"25%"
+    },
+    {
+        "img":"images/banh_trang.jpg",
+        "name":"Bánh Tráng Chấm Cô Gánh",
+        "price":"18.000",
+        "type":"10%"
+    },
+    {
+        "img":"images/tre_tron.jpg",
+        "name":"Tré Trộn",
+        "price":"45.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/mi_y.jpg",
+        "name":"Mỳ Ý Spaghetti",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/my_cay.jpg",
+        "name":"Mỳ Cay Hàn Quốc",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/sup_cua.jpg",
+        "name":"Súp Cua",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/kimbap.jpg",
+        "name":"Kimbap",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/cacao_dua.jpg",
+        "name":"Cacao Dừa",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/banh_mi.jpg",
+        "name":"Bánh Mì",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/sui_cao.jpg",
+        "name":"Sủi Cảo",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/ha_cao.jpg",
+        "name":"Há Cảo",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/trung_ga_nuong.jpg",
+        "name":"Trứng Gà Nướng",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/bot_chien.jpg",
+        "name":"Bột Chiên",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/banh_flan.jpg",
+        "name":"Bánh Flan",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/ca_phe_muoi.jpeg",
+        "name":"Cà Phê Muối",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/dua_dam.jpg",
+        "name":"Dừa Dằm",
+        "price":"15.000",
+        "type":"20%"
+    },
+    {
+        "img":"images/che_dua.jpeg",
+        "name":"Chè Dừa",
+        "price":"15.000",
+        "type":"20%"
+    }
+]

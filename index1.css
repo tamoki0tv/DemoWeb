@@ -23,6 +23,9 @@ nav {
     padding-left: 10px;
     padding-right: 2rem;
 }
+.menu-icon {
+    display: none;
+}
 .flex {
     display: flex;
 }
@@ -170,10 +173,11 @@ section {
     left: 0;
     right: 0;
     background-size: cover;
-    overflow: hidden;
-    position: relative;
+    position: absolute;
     width: 100vw;
-    height: 680px;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
 }
 .fix .container {
     height: 100%;
@@ -186,6 +190,7 @@ section {
     height: 100%;
     background-color: transparent;
 }
+
 .container1 {
     width: 470px;
     position: absolute;
@@ -206,6 +211,7 @@ section {
 .fix1 {
     top: 0;
     position: absolute;
+    height: 100%;
 }
 .fix1 .container2 {
     float: right;
@@ -261,7 +267,7 @@ section {
     margin-bottom: -15px;
     margin-top: 2rem;
 }
-.types span {
+.types a {
     border: 1px solid white;
     display: inline-block;
     border-radius: 6px;
@@ -270,7 +276,7 @@ section {
     margin-bottom: 10px;
     font-size: 14px;
 }
-.types span:hover {
+.types a:hover {
     background-color: white;
     color: black;
     transition: all .5s ease;
@@ -290,7 +296,10 @@ section {
     padding: 0;
     
 }
-
+.fix2 {
+    content: "";
+    height: 1400px;
+}
 
 
 .sale {
@@ -429,13 +438,16 @@ section {
 
 
 .footer {
-    position: absolute;
+    position: relative;
     background-color: rgb(149, 164, 178);
     width: 100%;
     color: #fff;
     padding: 30px 0 0 0;
     margin: 0;
     min-height: 12rem;
+    bottom: 0;
+    clear: both;
+    overflow: hidden;
   }
   
  .footer .container3 {
@@ -565,4 +577,25 @@ a.go_top:before {
     left: 27%;
     transition: all 0.8s ease;
     animation: bouncez  1.2s 500ms infinite;
+}
+
+@media (max-width: 1180px) {
+    .menu {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .icon {
+        width: 400px;
+        height: 30px;
+        margin: 6px 0;
+    }
+
+    /* Hiển thị menu khi nhấn vào biểu tượng 3 gạch ngang */
+    .menu-icon.active ~ .left,
+    .menu-icon.active ~ .right .user-dropdown {
+        display: block;
+    }
+    
 }
