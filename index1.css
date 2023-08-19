@@ -20,11 +20,9 @@ nav {
     z-index: 99;
     margin: 0;
     background-blend-mode: lighten;
-    padding-left: 10px;
     padding-right: 2rem;
-}
-.menu-icon {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 .flex {
     display: flex;
@@ -34,32 +32,85 @@ nav img {
     width: 100%;
     padding: 0.1rem;
 }
-.menu {
+nav > a >img {
+    height: 5rem;
+    margin-left: 2rem;
+    width: 8rem;
+    max-width: 100%;
+}
+nav a {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: inherit;
 }
-.menu > div > a {
+.menu {
+    margin: 0;
+    padding: 0;
+}
+.menu > div > a,.icon > div > a {
     display: block;
-    padding: 1.75rem;
+    padding: 1.5rem;
     text-decoration: none;
     color: white;
     margin: 0;
     transition: all 0.3s linear;
 }
-.left > div > a:hover {
+.menu > div:not(:first-child) > a:hover {
     border-radius: 2rem;
     background-color: aliceblue;
     color: black;
 }
-.right > div > a:hover {
+.menu1 {
+    position: fixed;
+    padding: 10px;
+    max-width: 100%;
+    width: 100vw;
+    background-color: #95a4b2;
+    top: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    display: none;
+}
+.menu1 >div:first-child >a,.menu >div:first-child >a {
+    color: red;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.menu1 > div:not(:first-child) > a:hover {
+    border-radius: 2rem;
+    background-color: aliceblue;
     color: black;
 }
-.right {
-    text-align: right;
+.menu1 > div > a{
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    transition: all 0.3s linear;
 }
-.left .right {
+.icon > div > a:hover {
+    color: black;
+}
+#toggler,
+nav label {
+    display: none;
+}
+.nav_overlay {
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.367);
+}
+.icon {
+    text-align: right;
     list-style-type: none;
+    position: relative;
+    top: 0.5rem;
 }
 .user-dropdown {
     position: relative;
@@ -78,6 +129,7 @@ nav img {
     color: rgb(161, 17, 17);
     display: none;
     position: absolute;
+    height: 15rem;
     right: -1rem;
     top: 0.5rem;
     width: 17rem;
@@ -92,16 +144,32 @@ nav img {
     width: 100%;
 }
 .user-info-dropdown .user-img {
-    width: 50px; /* Điều chỉnh kích thước chiều rộng ảnh */
-    height: 50px; /* Điều chỉnh kích thước chiều cao ảnh */
-    border-radius: 50%; /* Làm cho ảnh trở thành hình tròn */
+    width: 7rem; /* Điều chỉnh kích thước chiều rộng ảnh */
+    height: 7rem; /* Điều chỉnh kích thước chiều cao ảnh */
     object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
-    margin-right: 10px; /* Khoảng cách giữa ảnh và thông tin */
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
 }
-
+.user-img > div {
+    position: absolute;
+    border: 1px solid black;
+    border-bottom: 1px solid transparent;
+    border-radius: 50%;
+    width: 8.5rem;
+    height: 8.5rem !important;
+    right: -0.9rem;
+    top: -0.1rem;
+}
 .user:hover .user-info-dropdown {
   display: block;
+  height: 16rem;
 }
+#userInfo {
+    margin-top: 0.2rem;
+    border-top: 1px solid rgb(50, 50, 49) ;
+}
+
 header {
     display: flex;
 }
@@ -165,57 +233,67 @@ a {
 
 
 
-section {
-    position: relative;
+
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
-.fix {
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.fix-img {
     background-image: url(images/background.jpg);
-    left: 0;
-    right: 0;
     background-size: cover;
     position: absolute;
-    width: 100vw;
     height: 100vh;
-    z-index: 0;
+    width: 2000px;
+    max-width: 100%;
+}
+.fix { 
+    right: 0;
+    left: 0;
+    width: 45vw;
+    height: 100vh;
     overflow: hidden;
-}
-.fix .container {
-    height: 100%;
-    position: relative;
-}
-.container {
-    width: 1400px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 100%;
-    background-color: transparent;
-}
-
-.container1 {
-    width: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    color: white;
+    z-index: 1;
+}
+.container1 {
+    max-width: 100%;
+    position: relative;
     margin-top: 3rem;
-    float: left;
-    margin-left: 20px;
-    z-index: 2;
+    z-index: 99;
 }
 .ctn-fixed {
     position: fixed;
-    top: 80px;
+    top: 10px;
     margin: 0;
 }
 .ctn-absolute {
     position: absolute;
-    top: 700px;
+    top: 1250px;
 }
 .fix1 {
-    top: 0;
+    top: 35rem;
+    right: 0;
     position: absolute;
     height: 100%;
+    width: 50vw;
+    
 }
-.fix1 .container2 {
-    float: right;
-    width: 670px;
+.fix2 {
+    height: 1480px;
+    content: "";
+}
+.container2 {
+    max-width: 100%;
     color: black;
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -223,7 +301,6 @@ section {
     background-color: white;
     border-radius: 10px;
     position: relative;
-    z-index: auto;
 }
 .block-item {
     display: flex;
@@ -231,6 +308,7 @@ section {
 }
 .block-item >div {
     width: 470px;
+    max-width: 100%;
 }
 .title h2 {
     margin-top: 0;
@@ -250,7 +328,7 @@ section {
     border-radius: 6px 10px 10px 6px;
     border: 0;
 }
-.input button {
+.input a {
     width: 70px;
     height: 50px;
     position: absolute;
@@ -259,6 +337,11 @@ section {
     top: 0;
     border-radius: 0 6px 6px 0;
     background-color: #0288d1;
+}
+.input a div {
+    position: absolute;
+    right: 1.4rem;
+    top: 1rem;
 }
 .fa-solid {
     font-size: 1.2rem;
@@ -295,10 +378,6 @@ section {
     margin: 0;
     padding: 0;
     
-}
-.fix2 {
-    content: "";
-    height: 1400px;
 }
 
 
@@ -364,6 +443,7 @@ section {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .list-item .item {
     background-color: white;
@@ -378,7 +458,8 @@ section {
 .item > a:hover {
     transition: box-shadow .25s;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.2),0 4px 15px 0 rgba(0,0,0,.19);
-    text-decoration: none
+    text-decoration: none;
+    border-radius: 6px;
 }
 .img-item {
     border-radius: 6px 6px 0 0;
@@ -433,6 +514,9 @@ section {
     font-size: 13px;
 }
 
+.max-footer {
+    height: 92rem;
+}
 
 
 
@@ -448,10 +532,9 @@ section {
     bottom: 0;
     clear: both;
     overflow: hidden;
-  }
-  
- .footer .container3 {
-    max-width: 1200px;
+}
+.footer .container3 {
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
   }
@@ -544,7 +627,8 @@ section {
   }
 
 
-a.go_top {
+div.go_top {
+    cursor: pointer;
     width: 55px;
     height: 55px;
     position: fixed;
@@ -567,7 +651,7 @@ a.go_top {
     }
   }
   
-a.go_top:before {
+div.go_top:before {
     content: "\f077";
     font-family: FontAwesome;
     font-size: 26px;
@@ -579,23 +663,77 @@ a.go_top:before {
     animation: bouncez  1.2s 500ms infinite;
 }
 
-@media (max-width: 1180px) {
-    .menu {
+@media (max-width: 1024px) {
+    .menu{
         display: none;
     }
-    .menu-icon {
+    nav {
+        justify-content: none;
+    }
+    nav label {
+        font-size: 2rem;
+    }
+    .label1 {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    .label2 {
+        display: none;
+    }
+    .toggler:checked ~ .menu1 {
+        border-top:1px solid red ;
         display: block;
     }
-    .icon {
-        width: 400px;
-        height: 30px;
-        margin: 6px 0;
+    .toggler:checked ~ .nav_overlay {
+        display: block;
+        top: 23.2rem;
+    }
+    .toggler:checked ~ .label1 {
+        display: none;
+    }
+    .toggler:checked ~ .label2 {
+        display: block;
+        align-items: center;
+        cursor: pointer;
+       
+    }
+    .intro {
+        display: none;
+    }
+    .banner {
+        width: 100%;
     }
 
-    /* Hiển thị menu khi nhấn vào biểu tượng 3 gạch ngang */
-    .menu-icon.active ~ .left,
-    .menu-icon.active ~ .right .user-dropdown {
-        display: block;
+}
+@media (max-width: 968px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
     }
-    
+    .fix,.fix1 {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .fix1 {
+        top: auto;
+    }
+    .fix1 .container2 {
+        margin-right: auto;
+    }
+    .fix-img {
+        height: 38vh;
+    }
+    .ctn-fixed {
+        
+    }
+    .ctn-absolute {
+       
+        top: auto;
+    }
+    .fix2 {
+        height: 0px;
+    }
 }
