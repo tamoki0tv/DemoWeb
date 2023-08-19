@@ -257,3 +257,8 @@ h2{
     bottom: 100%;
   }
 }
+@media (max-width:800px) {
+  .tail {
+    display: none;
+  }
+}
