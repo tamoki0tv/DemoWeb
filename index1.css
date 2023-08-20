@@ -172,7 +172,9 @@ nav label {
     margin-top: 0.2rem;
     border-top: 1px solid rgb(50, 50, 49) ;
 }
-
+#userInfo > p {
+    padding-bottom: 5px;
+}
 header {
     display: flex;
 }

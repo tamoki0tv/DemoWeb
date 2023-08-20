@@ -6,7 +6,7 @@ $("index3.html") .ready (function() {
 })
 
 // Lấy thông tin user từ tệp JSON hoặc cơ sở dữ liệu
-/* const userJSON = localStorage.getItem('user');
+const userJSON = localStorage.getItem('user');
 const user = JSON.parse(userJSON);
 
 if (user) {
@@ -20,4 +20,4 @@ if (user) {
     <p><strong style="color: black;">Username:</strong> ${userUsername}</p>
     <p><strong style="color: black;">Phone:</strong> ${userPhone}</p>
   `;
-}*/
+}
