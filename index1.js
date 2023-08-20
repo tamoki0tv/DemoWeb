@@ -49,7 +49,7 @@ function loadItem() {
     for (let p of data)
       h+=`
                             <div class="item">
-                                <a href="#">
+                                <a href="index2.html">
                                     <div class="img-item">
                                         <img src="${p.img}">
                                     </div>

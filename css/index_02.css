@@ -1,0 +1,572 @@
+/*---------------base-control-----------*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*--------------header--------------------*/
+nav {
+    background-color: #95a4b2;
+    height: 5rem;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    margin: 0;
+    background-blend-mode: lighten;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+nav img {
+    height: 100%;
+    width: 100%;
+    padding: 0.1rem;
+}
+nav > a >img {
+    height: 5rem;
+    margin-left: 2rem;
+    width: 8rem;
+    max-width: 100%;
+}
+nav a {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+}
+.menu > div > a,.icon > div > a {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    transition: all 0.3s linear;
+}
+.menu > div:not(:nth-child(2)) > a:hover,.menu1 > div:not(:nth-child(2)) > a:hover {
+    border-radius: 2rem;
+    background-color: aliceblue;
+    color: black;
+}
+.menu1 {
+    position: fixed;
+    padding: 10px;
+    max-width: 100%;
+    width: 100vw;
+    background-color: #95a4b2;
+    top: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    display: none;
+}
+.menu1 >div:nth-child(2) >a,.menu >div:nth-child(2) >a {
+    color: red;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.menu1 > div > a{
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    transition: all 0.3s linear;
+}
+.icon > div > a:hover {
+    color: black;
+}
+#toggler,
+nav label {
+    display: none;
+}
+.nav_overlay {
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.367);
+}
+.icon {
+    text-align: right;
+    list-style-type: none;
+    position: relative;
+    top: 0.5rem;
+}
+.user-dropdown {
+    position: relative;
+    margin-top: 1rem;
+}
+.user-info-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    right: 1rem;
+    border-bottom: 10px solid rgb(193 216 234) ;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.user-info-dropdown {
+    color: rgb(161, 17, 17);
+    display: none;
+    position: absolute;
+    height: 15rem;
+    right: -1rem;
+    top: 0.5rem;
+    width: 17rem;
+    background-color: rgb(193 216 234);
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    text-align: left;
+    border-radius: 5px;
+}
+.user-info-dropdown img {
+    width: 100%;
+}
+.user-info-dropdown .user-img {
+    width: 7rem; /* Điều chỉnh kích thước chiều rộng ảnh */
+    height: 7rem; /* Điều chỉnh kích thước chiều cao ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+.user-img > div {
+    position: absolute;
+    border: 1px solid black;
+    border-bottom: 1px solid transparent;
+    border-radius: 50%;
+    width: 8.5rem;
+    height: 8.5rem !important;
+    right: -0.9rem;
+    top: -0.1rem;
+}
+.user:hover .user-info-dropdown {
+  display: block;
+  height: 16rem;
+}
+#userInfo {
+    margin-top: 0.2rem;
+    border-top: 1px solid rgb(50, 50, 49) ;
+}
+
+
+
+
+/*------------------Main------------------*/
+main.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;    
+    position: relative;
+}
+
+
+
+/*---------------menulist------------------*/
+main.container div.menulist {
+    top: 5rem;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    position: relative;
+    background-color: rgb(232, 150, 199);
+}
+main.container div.menulist ul {
+    list-style-type: none;
+    position: fixed;
+    margin-top: 5rem;
+}
+main.container div.menulist ul li {
+    margin-top: 1rem;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    border-bottom: 1px solid white;
+}
+main.container div.menulist ul :first-child {
+    margin-top: 1rem;
+}
+div.search input {
+    font-size: 17px;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    border: 2px solid black;
+    border-radius: 5px ;
+    margin-left: 2rem;
+    z-index: 1100;
+}
+div.search i {
+    position: absolute;
+    margin-top: 35px;
+    margin-left: -52px ;
+}
+
+div.search {
+    position: fixed;
+}
+
+/*---------------products------------------*/
+main.container div.products {
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid orange;
+}
+main.container div.products div.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    clear: both;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: orange;
+    color: black;
+}
+div.products div.product > div.picture {
+    width: 250px;
+    border-radius: 20px;
+}
+div.products div.product > div.picture img:hover {
+    animation:pulse;
+    animation-duration: 0.7s;
+    border: 1px solid black;
+}
+div.products div.product > div.picture img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 11px 2px silver;
+} 
+div.products  div.productbox {
+    margin: 0;
+    padding: 0;
+    width: 900px;
+    box-sizing: border-box;
+    clear: both;
+}
+div.products div.productbox div.product {
+    float: left;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    height: 310px;
+}
+
+div.products div.productbox div.product:last-child {
+    margin-bottom: 3rem;
+}
+div.products div.productbox div.product div.name-product {
+    margin-top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    width: 250px;
+}
+div.products div.productbox div.product div.price {
+    margin-left: 5px;
+    opacity: 0.6;
+}
+
+/*----------------------Footer----------------------*/
+.footer {
+    position: relative;
+    background-color: rgb(149, 164, 178);
+    width: 100%;
+    color: #fff;
+    padding: 30px 0 0 0;
+    margin: 0;
+    min-height: 12rem;
+    bottom: 0;
+    clear: both;
+    overflow: hidden;
+}
+.footer .container3 {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50vw;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-logo img {
+    max-width: 60%;
+    max-height: 100%
+  }
+  .footer-logo > div {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .footer-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-menu a:hover {
+    color: #f39c12;
+  }
+  
+  .footer-contact h3 {
+    margin-bottom: 10px;
+  }
+  .social {
+    width: 50%;
+  }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f39c12;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .social-icon:hover {
+    background-color: #e67e22;
+  }
+  .gif img {
+    width: 100%;
+    height: 100%;
+  }
+  .gif {
+    width: 7rem;
+    overflow: hidden;
+    animation: moveGif 10s linear infinite;
+  }
+  @keyframes moveGif {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(37vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+  }
+
+
+
+
+
+  /*-------------------Responsive------------------*/
+
+
+
+  @media (max-width: 1024px) {
+    .menu{
+        display: none;
+    }
+    nav {
+        justify-content: none;
+    }
+    nav label {
+        font-size: 2rem;
+    }
+    .label1 {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    .label2 {
+        display: none;
+    }
+    .toggler:checked ~ .menu1 {
+        border-top:1px solid red ;
+        display: block;
+    }
+    .toggler:checked ~ .nav_overlay {
+        display: block;
+        top: 23.2rem;
+    }
+    .toggler:checked ~ .label1 {
+        display: none;
+    }
+    .toggler:checked ~ .label2 {
+        display: block;
+        align-items: center;
+        cursor: pointer;
+       
+    }
+
+    .menulist {
+        display: none;
+    }
+    main.container div.products {
+        width: 100%;
+       margin-left: 2rem;
+       margin-right: 2rem;
+        box-sizing: border-box;
+        border: 0px;
+        margin-top: 5rem;
+    }
+    div.products  div.productbox {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        clear: both;
+    }
+    
+
+}
+
+
+@media (max-width: 800px) {
+    
+    .container3 {
+        display: block!important;
+    }
+    .footer-content {
+        max-width: 100%;
+        width: 100vw;
+    }
+    .social {
+        width: 100%;
+    }
+    .gif {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    @keyframes moveGif {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(70vw);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    div.products  div.productbox {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        clear: both;
+    }
+}
+
+
+
+@media (max-width: 660px) {
+    
+    .container3 {
+        display: block!important;
+    }
+    .footer-content {
+        max-width: 100%;
+        width: 100vw;
+    }
+    .social {
+        width: 100%;
+    }
+    .gif {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    @keyframes moveGif {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(70vw);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .menulist {
+        display: none;
+    }
+    main.container div.products {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        border: 0px;
+        margin-top: 5rem;
+    }
+    div.products  div.productbox {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        clear: both;
+    }
+    div.product {
+        clear: both;
+        width: 90%;
+
+    }
+    div.products div.product > div.picture {
+        width: 80%;
+        border-radius: 20px;
+    }
+    div.products div.productbox div.product {
+        float: left;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        height: 550px;
+    }
+   
+}
